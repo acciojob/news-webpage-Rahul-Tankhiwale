@@ -1,1 +1,118 @@
 /*  your css code here. If applicable */
+:root{
+	--header-bg: #011e29;
+	--body-bg: #f5f5f5;
+	--card-bg: #ffffff;
+	--text-color: #111;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+	background-color:var(--body-bg);
+	font-family: Arial, Helvetica, sans-serif;
+	color:var(--text-color);
+	line-height:1.4;
+	padding:20px 0;
+}
+
+.header{
+	background-color:var(--header-bg);
+	color:#fff;
+	text-align:center;
+	padding:24px 16px;
+}
+
+.container{
+	max-width:1100px;
+	margin:20px auto;
+	display:flex;
+	gap:24px;
+	align-items:flex-start;
+	padding:0 16px;
+}
+
+/* Latest News Section */
+.latest-news-section{
+	background-color:var(--card-bg);
+	padding:20px;
+	width:42%;
+	border-radius:10px;
+	box-shadow:0 2px 6px rgba(0,0,0,0.06);
+}
+
+.latest-news-section h2{
+	margin-bottom:12px;
+	font-size:20px;
+}
+
+.latest-news-section ul{
+	list-style:none;
+}
+
+.latest-news-section li{
+	padding:12px 0;
+	border-bottom:1px solid #eee;
+}
+
+.latest-news-section li:last-child{
+	border-bottom:none;
+}
+
+.latest-news-section h3{
+	font-size:16px;
+	margin-bottom:6px;
+}
+
+.latest-news-section p{
+	font-size:14px;
+	color:#333;
+}
+
+/* Pictorial News Section */
+.pictorial-news-section{
+	background-color:var(--card-bg);
+	padding:20px;
+	width:58%;
+	text-align:center;
+	border-radius:10px;
+	box-shadow:0 2px 6px rgba(0,0,0,0.06);
+}
+
+.pictorial-news-section h2{
+	margin-bottom:14px;
+	font-size:20px;
+}
+
+.photos{
+	display:grid;
+	grid-template-columns:repeat(3,1fr);
+	gap:12px;
+	align-items:start;
+}
+
+.photos figure{
+	margin:0;
+	text-align:left;
+	font-size:13px;
+}
+
+.photos img{
+	width:100%;
+	height:auto;
+	display:block;
+	border-radius:8px;
+	object-fit:cover;
+}
+
+/* Responsive adjustments */
+@media (max-width:900px){
+	.container{flex-direction:column;padding:0 12px}
+	.latest-news-section, .pictorial-news-section{width:100%}
+	.photos{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:480px){
+	.photos{grid-template-columns:1fr}
+	.header{padding:18px 10px}
+	.latest-news-section h3{font-size:15px}
+}
